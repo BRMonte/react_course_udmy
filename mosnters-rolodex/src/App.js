@@ -8,7 +8,20 @@ class App extends Component {
     super();
 
     this.state = {
-      string: 'Fala brunight'
+      monsters: [
+        {
+          name: 'Frank Stein',
+          id: 'kjn3'
+        },
+                {
+          name: 'Drake Ulla',
+          id: 'nsc5'
+        },
+                {
+          name: 'Zion B',
+          id: 'pla3'
+        },
+      ]
     };
   }
 
@@ -16,19 +29,9 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>{ this.state.string }</p>
-          <button onClick={() => this.setState({string: 'faaaaala, queridinho'})}>Change text</button>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {
+          this.state.monsters.map(monster => <h1 key={monster.id}>{ monster.name }</h1>)
+        }
       </div>
     );
   }
